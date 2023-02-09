@@ -1,0 +1,63 @@
+<form id="promptForm" action="/">
+<div class="form-group">
+  <div class="row">
+    <div class="col-6">
+      <label>Language</label>
+      <div>
+        <div class="custom-control custom-radio">
+          <input name="lang_radio" id="lang_radio_0" type="radio" required="required" class="custom-control-input" value="python">
+          <label for="lang_radio_0" class="custom-control-label">Python</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input name="lang_radio" id="lang_radio_1" type="radio" required="required" class="custom-control-input" value="java">
+          <label for="lang_radio_1" class="custom-control-label">Java</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input name="lang_radio" id="lang_radio_2" type="radio" required="required" class="custom-control-input" value="bash">
+          <label for="lang_radio_2" class="custom-control-label">Bash</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input name="lang_radio" id="lang_radio_3" type="radio" required="required" class="custom-control-input" value="docker">
+          <label for="lang_radio_3" class="custom-control-label">Dockerfile</label>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <label>Output to generate</label>
+      <div>
+        <div class="custom-control custom-radio">
+          <input name="output_style" id="output_style_0" type="radio" class="custom-control-input" value="function">
+          <label for="output_style_0" class="custom-control-label">Function</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input name="output_style" id="output_style_1" type="radio" class="custom-control-input" value="class">
+          <label for="output_style_1" class="custom-control-label">Class</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input name="output_style" id="output_style_2" type="radio" class="custom-control-input" value="script">
+          <label for="output_style_2" class="custom-control-label">Script</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="form-group">
+    <label for="name">Name to generate class, function or script</label>
+    <input id="name" name="name" type="text" required="required" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="description">Describe in plain language</label>
+    <textarea id="description" name="description" cols="40" rows="5" class="form-control"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="inputs">Inputs or how the output will be started</label>
+    <textarea id="inputs" name="inputs" cols="40" rows="5" class="form-control"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="outputs">Outputs when completed</label>
+    <textarea id="outputs" name="outputs" cols="40" rows="5" class="form-control"></textarea>
+  </div>
+  <div class="form-group">
+    <button name="submit" type="submit" class="btn btn-primary">Generate Prompt</button>
+  </div>
+</form>

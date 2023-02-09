@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                {% include "form.html" %}
+            </div>
+            <div class="col-sm-6">
+                <p>
+                    Write a {{ language }} {{ style }} with appropriate formatting and variable names. <br>
+                    Do not use magic numbers or strings. Constant variables should LOOK_LIKE_THIS. <br>
+                    Call this {{ style }} "{{ name }}"
+                    The {{ style }} description is {{ description }} <br> <br> <br>
+                    The inputs are <br> {{ inputs }} <br> <br> and should output <br> {{ outputs }} <br>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    document.getElementById("promptForm").addEventListener("submit", function(event){
+        event.preventDefault();
+        const form = new FormData(event.target);
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "/", true);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                location.reload();
+            }
+        };
+        xhr.send(form);
+    });
+</script>
